@@ -1,0 +1,32 @@
+GitHub username for student TCaldwell8989
+Number grade: 0.000000
+Messages: Error cloning code from GitHub, b"Cloning into 'assignment-0-variables-and-math/TCaldwell8989'...\nremote: Repository not found.\nfatal: repository 'https://github.com/mctc-itec/assignment-0-variables-and-math-TCaldwell8989/' not found\n"
+
+********************************************************************************
+
+GitHub username for student BANEdesign
+Number grade: 0.000000
+Messages: Error cloning code from GitHub, b"Cloning into 'assignment-0-variables-and-math/BANEdesign'...\nremote: Repository not found.\nfatal: repository 'https://github.com/mctc-itec/assignment-0-variables-and-math-BANEdesign/' not found\n"
+
+********************************************************************************
+
+GitHub username for student Doesntexist
+Number grade: 0.000000
+Messages: Error cloning code from GitHub, b"Cloning into 'assignment-0-variables-and-math/Doesntexist'...\nremote: Repository not found.\nfatal: repository 'https://github.com/mctc-itec/assignment-0-variables-and-math-Doesntexist/' not found\n"
+
+********************************************************************************
+
+GitHub username for student Dreyke
+Number grade: 16.000000
+Messages: {'Question_1_Add_Numbers': 4.0, 'Question_2_Shout': 4.0, 'Question_3_Miles_To_Kilometers': 4.0, 'Question_4_Triplicate_String': 4.0, 'Question_5_Class_Setup': 0}
+0
+
+********************************************************************************
+
+GitHub username for student ande3674
+Number grade: 16.000000
+Messages: {'Question_1_Add_Numbers': 4.0, 'Question_2_Shout': 4.0, 'Question_3_Miles_To_Kilometers': 4.0, 'Question_4_Triplicate_String': 4.0, 'Question_5_Class_Setup': 0}
+0
+
+********************************************************************************
+

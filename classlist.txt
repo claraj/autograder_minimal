@@ -1,0 +1,7 @@
+# list of GitHub usernames
+# Lines starting with # are ignored
+TCaldwell8989
+BANEdesign
+Doesntexist
+Dreyke
+ande3674
