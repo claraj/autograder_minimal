@@ -11,7 +11,7 @@ python grader.py mctc_itec assignment_7_classes week_7.json
 TODO: either check modification dates for the test files and grades JSON file
 OR copy in the original test files/grades JSON to prevent cheating, or students modifying tests.
 
-The file system stuff may not work on Windows. Modify if needed.
+Not tested on Windows.
 
 If the student's code is already downloaded, it won't be graded.
 Suggest deleting any downloaded code for this assignment and downloading everying fresh.
@@ -64,8 +64,8 @@ def main():
     for student_github in students:
 
         repo_url = url_template % (org_name, repo_prefix, student_github)
-
-        command = ['git', 'clone', '--recursive', repo_url, '%s/%s' % (repo_prefix, student_github) ]
+        destination = os.path.join(repo_prefix, student_github)
+        command = ['git', 'clone', '--recursive', repo_url, destination ]
         clone_result = subprocess.run(command, capture_output=True)
         if clone_result.returncode != 0:
             results[student_github] = 'Error cloning code from GitHub, ' + str(clone_result.stderr)
@@ -91,7 +91,7 @@ def main():
 
     for student_github in successfully_downloaded_repos:
 
-        project_dir = '%s/%s' % (repo_prefix, student_github)
+        project_dir = os.path.join(repo_prefix, student_github)
         mvn_test_cmd = ['mvn', '-q', '-f', project_dir, 'test']
         build_result = subprocess.run(mvn_test_cmd, capture_output=True)
         if build_result.returncode != 0:
@@ -115,7 +115,7 @@ def main():
     # For each repo that was build, use the grades_week_1.json and the output in the test reports to figure out the grade.
 
     for student_github in successfully_built_repos:
-        project_dir = '%s/%s' % (repo_prefix, student_github)
+        project_dir = os.path.join(repo_prefix, student_github)
         student_result, total_points = calc_grade(project_dir)
 
         results[student_github] = str(student_result) + '\n' + str(results[student_github])
@@ -145,7 +145,7 @@ def main():
 def calc_grade(project_location):
     # yuck
 
-    json_file = '%s/grades/%s' % (project_location, grade_json_file)
+    json_file = os.path.join(project_location, 'grades', grade_json_file)
     try:
         scheme = json.load(open(json_file))
     except:
