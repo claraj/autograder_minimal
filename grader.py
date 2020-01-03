@@ -4,9 +4,9 @@ Quick-and-dirty script for downloading, building, and grading Java class assignm
 
 To do: replace the text in classlist.txt with a list of your own student github login names
 
-To use: provide your org name,  the repo prefix, and the grades JSON filename as arguments, for example:
+To use: provide your org name, the repo prefix, and the grades JSON filename as arguments, for example:
 
-python grader.py mctc_itec assignment_7_classes week_7.json
+python grader.py mctc_itec assignment_7_classes grade_scheme.json
 
 TODO: either check modification dates for the test files and grades JSON file
 OR copy in the original test files/grades JSON to prevent cheating, or students modifying tests.
@@ -18,7 +18,7 @@ Suggest deleting any downloaded code for this assignment and downloading everyin
 
 A lot of output is dumped into raw_output.txt.
 
-Requires Python 3.7 or later. Updgrade if it's failing on the capture_output argument in subprocess.run.
+Requires Python 3.7 or later. Upgrade if it's failing on the capture_output argument in subprocess.run.
 
 
 """
@@ -51,7 +51,7 @@ def main():
     results = dict( zip (students, [0] * len(students)) )
     grades = dict( zip (students, [0] * len(students)) )
 
-    # For each student, download ther code
+    # For each student, download their code
     # The repo URL will be in the form of
     # https://github.com/ORGNAME/PREFIX_STUDENTGITHUBID
 
@@ -78,7 +78,7 @@ def main():
         else:
             successfully_downloaded_repos.append(student_github)
 
-    print('\nDownloaed these repositories:\n', ', '.join(successfully_downloaded_repos))
+    print('\nDownloaded these repositories:\n', ', '.join(successfully_downloaded_repos))
 
 
     # For each repo, build and run tests
@@ -112,7 +112,7 @@ def main():
     # TODO check for edited tests/grade files or insert student code into onstructor copy.
 
 
-    # For each repo that was build, use the grades_week_1.json and the output in the test reports to figure out the grade.
+    # For each repo that was built, use the grades***.json file and the output in the test reports to figure out the grade.
 
     for student_github in successfully_built_repos:
         project_dir = os.path.join(repo_prefix, student_github)
